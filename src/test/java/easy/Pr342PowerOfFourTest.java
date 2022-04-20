@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class Pr342PowerOfFourTest {
 
-  Pr342PowerOfFour pr;
+  private Pr342PowerOfFour pr;
 
   private static Stream<Arguments> provideNums() {
     return Stream.of(

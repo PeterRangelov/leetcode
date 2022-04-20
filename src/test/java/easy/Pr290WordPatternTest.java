@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class Pr290WordPatternTest {
 
-  Pr290WordPattern pr;
+  private Pr290WordPattern pr;
 
   private static Stream<Arguments> provideData() {
     return Stream.of(

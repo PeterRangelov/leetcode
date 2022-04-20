@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import easy.Pr171ExcelSheetColumnNumber;
 
 public class Tests {
-  Pr171ExcelSheetColumnNumber pr;
+  private Pr171ExcelSheetColumnNumber pr;
 
   @BeforeEach
   void setup() {

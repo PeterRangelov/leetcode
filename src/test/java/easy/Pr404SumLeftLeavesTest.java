@@ -13,7 +13,7 @@ import easy.models.TreeNode;
 
 public class Pr404SumLeftLeavesTest {
 
-  Pr404SumLeftLeaves pr;
+  private Pr404SumLeftLeaves pr;
 
   private static Stream<Arguments> provideData() {
 
@@ -43,7 +43,7 @@ public class Pr404SumLeftLeavesTest {
 
   @BeforeEach
   void setup() {
-    pr = new Pr404SumLeftLeaves();
+    pr = new easy.Pr404SumLeftLeaves();
   }
 
   @ParameterizedTest

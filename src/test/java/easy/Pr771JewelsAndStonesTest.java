@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class Pr771JewelsAndStonesTest {
-  Pr771JewelsAndStones pr;
+  private Pr771JewelsAndStones pr;
 
   @BeforeEach
   void setup() {

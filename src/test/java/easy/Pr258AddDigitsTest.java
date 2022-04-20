@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class Pr258AddDigitsTest {
 
-  Pr258AddDigits pr;
+  private Pr258AddDigits pr;
 
   private static Stream<Arguments> provideNums() {
     return Stream.of(

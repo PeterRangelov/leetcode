@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class Pr231PowerOfTwoTest {
 
-  Pr231PowerOfTwo pr;
+  private Pr231PowerOfTwo pr;
 
   private static Stream<Arguments> provideNumbers() {
     return Stream.of(

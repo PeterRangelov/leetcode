@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class Pr859BuddyStringsTest {
 
-  Pr859BuddyStrings pr;
+  private Pr859BuddyStrings pr;
 
   private static Stream<Arguments> provideData() {
     return Stream.of(

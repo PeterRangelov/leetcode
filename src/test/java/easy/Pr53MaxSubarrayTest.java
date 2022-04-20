@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class Pr53MaxSubarrayTest {
-  Pr53MaxSubarray pr;
+  private Pr53MaxSubarray pr;
 
   @BeforeEach
   void setup() {

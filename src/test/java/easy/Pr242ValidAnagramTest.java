@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class Pr242ValidAnagramTest {
 
-  Pr242ValidAnagram pr;
+  private Pr242ValidAnagram pr;
 
   private static Stream<Arguments> provideAnagrams() {
     return Stream.of(

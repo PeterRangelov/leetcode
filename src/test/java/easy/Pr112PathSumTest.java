@@ -13,7 +13,7 @@ import easy.models.TreeNode;
 
 public class Pr112PathSumTest {
 
-  Pr112PathSum pr;
+  private Pr112PathSum pr;
 
   private static Stream<Arguments> provideData() {
 

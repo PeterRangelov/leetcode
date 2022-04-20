@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class Pr383RansomNoteTest {
-  Pr1528ShuffleString pr;
+  private Pr1528ShuffleString pr;
 
   @BeforeEach
   void setup() {

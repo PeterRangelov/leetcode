@@ -15,7 +15,7 @@ import easy.models.Node;
 
 public class Pr589NaryTreePreorderTrTest {
 
-  Pr589NaryTreePreorderTr pr;
+  private Pr589NaryTreePreorderTr pr;
 
   private static Stream<Arguments> provideData() {
 

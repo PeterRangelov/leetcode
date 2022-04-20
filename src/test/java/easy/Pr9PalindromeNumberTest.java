@@ -9,25 +9,27 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class Pr121BuySellStockTest {
+public class Pr9PalindromeNumberTest {
 
-  private Pr121BuySellStock pr;
+  private Pr9PalindromeNumber pr;
 
-  private static Stream<Arguments> provideNums() {
+  private static Stream<Arguments> provideNumbers() {
     return Stream.of(
-      Arguments.of(new int[] {7, 1, 5, 3, 6, 4}, 5),
-      Arguments.of(new int[] {7, 6, 4, 3, 1}, 0)
+      Arguments.of(121, true),
+      Arguments.of(313, true),
+      Arguments.of(10_000_021, false)
     );
   }
 
   @BeforeEach
   void setup() {
-    pr = new Pr121BuySellStock();
+    pr = new Pr9PalindromeNumber();
   }
 
   @ParameterizedTest
-  @MethodSource("provideNums")
-  void testAll(int[] prices, int profit) {
-    assertEquals(profit, pr.maxProfit(prices));
+  @MethodSource("provideNumbers")
+  void testAll(int number, boolean isPalindrome) {
+    assertEquals(isPalindrome, pr.isPalindrome(number));
   }
+
 }

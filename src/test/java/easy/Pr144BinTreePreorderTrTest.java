@@ -15,7 +15,7 @@ import easy.models.TreeNode;
 
 public class Pr144BinTreePreorderTrTest {
 
-  Pr144BinTreePreorderTr pr;
+  private Pr144BinTreePreorderTr pr;
 
   private static Stream<Arguments> provideData() {
 

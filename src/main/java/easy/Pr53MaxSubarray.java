@@ -4,19 +4,32 @@ public class Pr53MaxSubarray {
 
   public int maxSubArray(int[] nums) {
 
-    int max = nums[0];
-    int cur = 0;
+    // Approach 1
+    
+    //    int max = nums[0];
+    //    int cur = 0;
+    //
+    //    for (int n : nums) {
+    //
+    //      if (cur < 0) {
+    //        cur = 0;
+    //      }
+    //
+    //      cur += n;
+    //      max = Math.max(cur, max);
+    //    }
+    //
+    //    return max;
 
-    for (int n : nums) {
+    // Approach 2
 
-      if (cur < 0) {
-        cur = 0;
-      }
+    int maxCurrent = nums[0], maxGlobal = nums[0];
 
-      cur += n;
-      max = Math.max(cur, max);
+    for (int i = 1; i < nums.length; i++) {
+      maxCurrent = Math.max(maxCurrent + nums[i], nums[i]);
+      maxGlobal = Math.max(maxCurrent, maxGlobal);
     }
 
-    return max;
+    return maxGlobal;
   }
 }

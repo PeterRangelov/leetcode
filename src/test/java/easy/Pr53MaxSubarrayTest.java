@@ -1,9 +1,12 @@
 package easy;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.stream.Stream;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class Pr53MaxSubarrayTest {
   private Pr53MaxSubarray pr;
@@ -13,19 +16,21 @@ public class Pr53MaxSubarrayTest {
     pr = new Pr53MaxSubarray();
   }
 
-  @Test
-  void test_A() {
-    assertEquals(1, pr.maxSubArray(new int[] {1}));
+  private static Stream<Arguments> provideData() {
+    return Stream.of(
+      Arguments.of(new int[] {1}, 1),
+      Arguments.of(new int[] {5, 4, -1, 7, 8}, 23),
+      Arguments.of(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}, 6),
+      Arguments.of(new int[] {-4, -3, -2}, -2),
+      Arguments.of(new int[] {-2, -3, -4}, -2)
+    );
+
   }
 
-  @Test
-  void test_B() {
-    assertEquals(23, pr.maxSubArray(new int[] {5, 4, -1, 7, 8}));
-  }
-
-  @Test
-  void test_C() {
-    assertEquals(6, pr.maxSubArray(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+  @ParameterizedTest
+  @MethodSource("provideData")
+  void testAll(int[] arr, int maxSum) {
+    Assertions.assertEquals(maxSum, pr.maxSubArray(arr));
   }
 
 }

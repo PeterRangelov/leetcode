@@ -16,6 +16,14 @@ public class Pr200NumIslandsTest {
     return Stream.of(
       Arguments.of(
         new char[][] {
+          {'0'}
+        }, 0),
+      Arguments.of(
+        new char[][] {
+          {'1'}
+        }, 1),
+      Arguments.of(
+        new char[][] {
           {'1', '1', '1', '1', '0'},
           {'1', '1', '0', '1', '0'},
           {'1', '1', '0', '0', '0'},
@@ -28,7 +36,6 @@ public class Pr200NumIslandsTest {
           {'0', '0', '1', '0', '0'},
           {'0', '0', '0', '1', '1'}
         }, 3)
-
     );
 
   }

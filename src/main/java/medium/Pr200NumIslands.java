@@ -6,13 +6,13 @@ public class Pr200NumIslands {
 
   public int numIslands(char[][] grid) {
 
-    this.ROWS = grid.length - 1;
-    this.COLS = grid[0].length - 1;
+    ROWS = grid.length;
+    COLS = grid[0].length;
 
     int count = 0;
 
-    for (int i = 0; i < grid.length; i++) {
-      for (int j = 0; j < grid[i].length; j++) {
+    for (int i = 0; i < ROWS; i++) {
+      for (int j = 0; j < COLS; j++) {
 
         // find a land tile
         if (grid[i][j] == '1') {
@@ -42,8 +42,8 @@ public class Pr200NumIslands {
   }
 
   private boolean isInBounds(int r, int c) {
-    return r <= ROWS && r >= 0 &&
-      c <= COLS && c >= 0;
+    return r < ROWS && r >= 0 &&
+      c < COLS && c >= 0;
   }
 
 }

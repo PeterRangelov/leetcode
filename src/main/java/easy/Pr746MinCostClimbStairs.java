@@ -1,69 +1,39 @@
 package easy;
 
-import java.util.HashMap;
-import java.util.Map;
-
+/**
+ * This class provides a solution to the problem of finding the minimum cost
+ * to climb a staircase, where each step has a specific associated cost.
+ * The climber can start from either the first or the second step and can
+ * climb either one or two steps at a time.
+ */
 public class Pr746MinCostClimbStairs {
 
+  /**
+   * Calculates the minimum cost to reach the top of the staircase.
+   *
+   * @param cost an array where cost[i] represents the cost of the i-th step.
+   *             The length of the array represents the total number of steps.
+   * @return the minimum cost to reach the top of the staircase.
+   */
   public int minCostClimbingStairs(int[] cost) {
+    // Initialize an array to store the minimum cost to reach each step
+    int n = cost.length;
+    int[] minCost = new int[n + 1];
 
-    Map<int[], Integer> memo = new HashMap<>();
+    // Base cases: cost to reach the first step is 0 (starting point)
+    // Cost to reach the second step is the cost of the first step
+    minCost[0] = 0;
+    minCost[1] = cost[0];
 
-    int totalCost = 0;
-
-    // left to right isn't gonna work
-    int currentStep = Math.min(cost[0], cost[1]);
-
-    for (int i = 0; i < cost.length - 1; i++) {
-
-      if (cost[i] < cost[i + 1]) {
-        totalCost += cost[i];
-      }
-      else {
-        totalCost += cost[i + 1];
-      }
-
+    // Fill the minCost array
+    for (int i = 2; i <= n; i++) {
+      // The cost to reach step i is the minimum of the cost to reach
+      // the previous step or the step before that, plus the current step cost
+      minCost[i] = Math.min(minCost[i - 1] + (i == n ? 0 : cost[i - 1]),
+              minCost[i - 2] + (i == n ? 0 : cost[i - 2]));
     }
 
-    return totalCost;
+    // The minimum cost to reach the top is in minCost[n]
+    return minCost[n];
   }
-
-  private long waysTo(int step) {
-
-    if (step == 1) {
-      return 1;
-    }
-
-    if (step == 2) {
-      return 2;
-    }
-
-    // ways to reach n-1 plus ways to reach n-2
-
-    return waysTo(step - 1) + waysTo(step - 2);
-
-  }
-
-  //  private int computeCost(int step, int[] cost, Map<int[], Integer> memo) {
-  //
-  //    if (step == 1) {
-  //      return 1;
-  //    }
-  //
-  //    if (step == 2) {
-  //      return 2;
-  //    }
-  //
-  //    if (memo.containsKey(cost)) {
-  //      return memo.get(cost);
-  //    }
-  //
-  //    // ways to reach n-1 plus ways to reach n-2
-  //    long numWays = waysTo(step - 1, memo) + waysTo(step - 2, memo);
-  //    memo[step] = numWays;
-  //
-  //    return numWays;
-  //
-  //  }
-
 }
